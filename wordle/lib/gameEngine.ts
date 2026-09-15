@@ -77,7 +77,7 @@ export function applyGuess(state: GameState, guess: string): GameState {
     { word: guess.toUpperCase(), result },
   ];
 
-  let status = state.status;
+  let status: GameState['status'] = state.status;
   if (result.every((r) => r === 'correct')) {
     status = 'won';
   } else if (updatedGuesses.length >= state.maxAttempts) {
