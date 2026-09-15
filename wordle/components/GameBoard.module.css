@@ -1,0 +1,44 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tile {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border: 1px solid #ccc;
+}
+
+.correct {
+  background-color: #22c55e;
+  color: white;
+}
+
+.present {
+  background-color: #eab308;
+  color: white;
+}
+
+.absent {
+  background-color: #4b5563;
+  color: white;
+}
+
+.empty {
+  background-color: #e5e7eb;
+  color: #111827;
+}
