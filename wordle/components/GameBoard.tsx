@@ -2,9 +2,6 @@
 
 import styles from './GameBoard.module.css';
 
-const WORD_LENGTH = 5;
-const MAX_ATTEMPTS = 6;
-
 interface Guess {
   word: string;
   result: string[];
@@ -12,16 +9,18 @@ interface Guess {
 
 interface GameBoardProps {
   guesses: Guess[];
+  wordLength: number;
+  maxAttempts: number;
 }
 
-export default function GameBoard({ guesses }: GameBoardProps) {
+export default function GameBoard({ guesses, wordLength, maxAttempts }: GameBoardProps) {
   const rows = [];
 
-  for (let i = 0; i < MAX_ATTEMPTS; i++) {
+  for (let i = 0; i < maxAttempts; i++) {
     const guess = guesses[i];
     rows.push(
       <div key={i} className={styles.row}>
-        {Array.from({ length: WORD_LENGTH }).map((_, j) => {
+        {Array.from({ length: wordLength }).map((_, j) => {
           const letter = guess ? guess.word[j] : '';
           const status = guess ? guess.result[j] : 'empty';
 
